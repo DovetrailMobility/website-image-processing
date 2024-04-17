@@ -11,17 +11,17 @@ import { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Invoices',
 };
- 
+
 export default async function Page({
-  searchParams
-} : {
+  searchParams,
+}: {
   searchParams?: {
-    query?: string
-    page?: string
+    query?: string;
+    page?: string;
   };
 }) {
   const query = searchParams?.query || '';
-  const currentPage = Number(searchParams?.page) || 1
+  const currentPage = Number(searchParams?.page) || 1;
 
   const totalPages = await fetchInvoicesPages(query);
 

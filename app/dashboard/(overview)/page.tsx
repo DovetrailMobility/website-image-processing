@@ -6,14 +6,14 @@ import { Suspense } from 'react';
 import {
   RevenueChartSkeleton,
   LatestInvoicesSkeleton,
-  CardsSkeleton
+  CardsSkeleton,
 } from '@/app/ui/skeletons';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Dashboard',
 };
- 
+
 export default async function Page() {
   return (
     <main>
@@ -31,7 +31,7 @@ export default async function Page() {
         </Suspense>
         <Suspense fallback={<LatestInvoicesSkeleton />}>
           <LatestInvoices />
-        </Suspense>        
+        </Suspense>
       </div>
     </main>
   );
